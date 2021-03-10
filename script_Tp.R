@@ -45,6 +45,8 @@ reg2 <- lm(Detergents ~ Epicerie, data = data)
 abline(reg2)
 
 #Question 3
-
-prev <- predict(reg, data.frame(Traiteur = Detergents*2))
-prev
+min(data$Epicerie)
+prev <- predict(reg, data.frame(Detergents = min(Epicerie))
+print(prev)
+#print(paste("Lorsque 200 moteurs seront fabriques, on prevoit un temps moyen de fabrication de",
+#	prev, "heures."), quote = FALSE)
