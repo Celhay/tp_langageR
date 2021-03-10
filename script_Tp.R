@@ -6,10 +6,10 @@ names(data) <- c("Canal","Region","ProduitsFrais","Lait","Epicerie","Surgele","D
 	#Suppression de la colonne Canal
 data$Canal <- NULL
 
-	#Ajout colonne Total de chaque colonne sauf Région
+	#Ajout colonne Total de chaque colonne sauf RÃ©gion
 data$Total <- rowSums(data[2:7])
 
-	#Ajout colonne pourcentage de chiffre d’affaires des produits suivants arrondi à l'entier prés : 
+	#Ajout colonne pourcentage de chiffre dâ€™affaires des produits suivants arrondi Ã  l'entier prÃ©s : 
 data$"% ProduitsFrais" <- round(data$ProduitsFrais * 100 / data$TotalColonne)
 data$"% Lait" <- round(data$Lait * 100 / data$TotalColonne)
 data$"% Epicerie" <- round(data$Epicerie * 100 / data$TotalColonne)
@@ -20,27 +20,25 @@ data$"% Traiteur" <- round(data$Traiteur * 100 / data$TotalColonne)
 	#Exportation du tableau
 write.csv2(data, file = "D:/Epsi/EPSI I5/language R/tp/TPR.csv")
 
-str(data)
+	#Chiffre dâ€™affaire Â« Total Â» moyen
+apply(data[8],2,tapply,data$Region,mean)
 
 
-
-#Partie 2
+#Partie 2 :
 
 data <- read.csv("C:/Users/rems_/OneDrive/Bureau/R/tp_langageR/ventes.csv")
 names(data) <- c("Canal","Region","ProduitsFrais","Lait","Epicerie","Surgele","Detergents","Traiteur")
 
-#Question 1 : Determine quel paire de vaiable a le meilleur coéfficient de coréaltion linéaire
-
+	#Meilleur coÃ©fficient de corÃ©altion linÃ©aire
 cor(data[-2][-1], use="complete.obs")
+#On peut voir que c'est la paire DÃ©tergent - Epicerie
 
-#On peut voir que c'est la paire Détergent - Epicerie
-
-#Question 2
+	#Question 2
 plot(data$Detergents, data$Epicerie, xlab = "Detergents", ylab = "Epicerie")
 reg <- lm(Epicerie ~ Detergents, data = data)
 abline(reg)
 
-plot(data$Epicerie , data$Detergents, xlab = "Epicerie", ylab = "Détergents")
+plot(data$Epicerie , data$Detergents, xlab = "Epicerie", ylab = "DÃ©tergents")
 reg2 <- lm(Detergents ~ Epicerie, data = data)
 abline(reg2)
 
@@ -48,5 +46,3 @@ abline(reg2)
 min(data$Epicerie)
 prev <- predict(reg, data.frame(Detergents = min(Epicerie))
 print(prev)
-#print(paste("Lorsque 200 moteurs seront fabriques, on prevoit un temps moyen de fabrication de",
-#	prev, "heures."), quote = FALSE)
