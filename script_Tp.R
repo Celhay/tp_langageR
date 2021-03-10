@@ -1,6 +1,5 @@
 # Introduction : Chargement du fichier csv
-url <- ("D:/Epsi/EPSI I5/language R/tp/")
-data <- read.csv("D:/Epsi/EPSI I5/language R/tp/ventes.csv")
+data <- read.csv("C:/Users/rems_/OneDrive/Bureau/R/tp_langageR/ventes.csv")
 names(data) <- c("Canal","Region","ProduitsFrais","Lait","Epicerie","Surgele","Detergents","Traiteur")
 
 # Partie 1 :
@@ -27,7 +26,7 @@ str(data)
 
 #Partie 2
 
-data <- read.csv("D:/Epsi/EPSI I5/language R/tp/ventes.csv")
+data <- read.csv("C:/Users/rems_/OneDrive/Bureau/R/tp_langageR/ventes.csv")
 names(data) <- c("Canal","Region","ProduitsFrais","Lait","Epicerie","Surgele","Detergents","Traiteur")
 
 #Question 1 : Determine quel paire de vaiable a le meilleur coéfficient de coréaltion linéaire
@@ -37,3 +36,8 @@ cor(data[-2][-1], use="complete.obs")
 #On peut voir que c'est la paire Détergent - Traiteur
 
 #Question 2
+plot(data$Detergents, data$Traiteur, xlab = "Traiteurs", ylab = "Détergents")
+reg <- lm(Traiteur ~ Detergents, data = data)
+abline(reg)
+
+
