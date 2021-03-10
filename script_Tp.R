@@ -1,6 +1,14 @@
+#Loubiou Remi
+#Marty Florian
+#Mestreau Marine
+
+
 # Introduction : Chargement du fichier csv
+# Avant de commencer : il faut changer le chemin vers le fichier csv :
 data <- read.csv("D:/Epsi/EPSI I5/language R/tp/ventes.csv")
 #data <- read.csv("C:/Users/rems_/OneDrive/Bureau/R/tp_langageR/ventes.csv")
+
+
 names(data) <- c("Canal","Region","ProduitsFrais","Lait","Epicerie","Surgele","Detergents","Traiteur")
 
 # Partie 1 :
@@ -22,7 +30,7 @@ data$"% Traiteur" <- round(data$Traiteur * 100 / data$Total)
 write.csv2(data, file = "D:/Epsi/EPSI I5/language R/tp/TPR.csv")
 
 	#Chiffre d’affaire « Total » moyen
-apply(data[8],2,tapply,data$Region,mean)
+apply(data[8],2,tapply,data$Region, mean)
 
 region1 <- data[data$Region == "1",]
 region2 <- data[data$Region == "2",]
