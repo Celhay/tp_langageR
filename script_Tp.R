@@ -36,8 +36,12 @@ cor(data[-2][-1], use="complete.obs")
 #On peut voir que c'est la paire Détergent - Traiteur
 
 #Question 2
-plot(data$Detergents, data$Traiteur, xlab = "Traiteurs", ylab = "Détergents")
+plot(data$Detergents, data$Traiteur, xlab = "Detergents", ylab = "Traiteur")
 reg <- lm(Traiteur ~ Detergents, data = data)
 abline(reg)
+
+plot(data$Traiteur, data$Detergents, xlab = "Traiteur", ylab = "Détergents")
+reg2 <- lm(Detergents ~ Traiteur, data = data)
+abline(reg2)
 
 
