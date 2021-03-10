@@ -1,6 +1,6 @@
 # Introduction : Chargement du fichier csv
-data <- read.csv("D:/Epsi/EPSI I5/language R/tp/ventes.csv")
-#data <- read.csv("C:/Users/rems_/OneDrive/Bureau/R/tp_langageR/ventes.csv")
+#data <- read.csv("D:/Epsi/EPSI I5/language R/tp/ventes.csv")
+data <- read.csv("C:/Users/rems_/OneDrive/Bureau/R/tp_langageR/ventes.csv")
 names(data) <- c("Canal","Region","ProduitsFrais","Lait","Epicerie","Surgele","Detergents","Traiteur")
 
 # Partie 1 :
@@ -43,6 +43,7 @@ reg2 <- lm(Detergents ~ Epicerie, data = data)
 abline(reg2)
 
 #Question 3
-min(data$Epicerie)
-prev <- predict(reg, data.frame(Detergents = min(Epicerie))
-print(prev)
+prev <- predict(reg, newdata=data.frame(Detergents = min(data$Epicerie)*2))
+prev
+prev2 <- predict(reg2, newdata=data.frame(Epicerie = min(data$Detergents)*2))
+prev2
