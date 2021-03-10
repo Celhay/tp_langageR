@@ -27,8 +27,13 @@ str(data)
 
 #Partie 2
 
-#Question 1
+data <- read.csv("D:/Epsi/EPSI I5/language R/tp/ventes.csv")
+names(data) <- c("Canal","Region","ProduitsFrais","Lait","Epicerie","Surgele","Detergents","Traiteur")
+
+#Question 1 : Determine quel paire de vaiable a le meilleur coéfficient de coréaltion linéaire
 
 cor(data[-2][-1], use="complete.obs")
+
+#On peut voir que c'est la paire Détergent - Traiteur
 
 #Question 2
