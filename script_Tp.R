@@ -4,7 +4,7 @@
 
 
 # Introduction : Chargement du fichier csv
-# Avant de commencer : il faut changer le chemin vers le fichier csv :
+# /!\ Avant de commencer il faut changer le chemin vers le fichier csv 
 data <- read.csv("D:/Epsi/EPSI I5/language R/tp/ventes.csv")
 #data <- read.csv("C:/Users/rems_/OneDrive/Bureau/R/tp_langageR/ventes.csv")
 
@@ -27,6 +27,7 @@ data$"% Detergents" <- round(data$Detergents * 100 / data$Total)
 data$"% Traiteur" <- round(data$Traiteur * 100 / data$Total)
 
 	#Exportation du tableau
+# /!\ Avant de commencer il faut changer le chemin 
 write.csv2(data, file = "D:/Epsi/EPSI I5/language R/tp/TPR.csv")
 
 	#Chiffre d’affaire « Total » moyen
@@ -39,6 +40,9 @@ region3 <- data[data$Region == "3",]
 paste(c("CA Total moyen Region 1 : ",round(mean(region1$Total), 2),"euros"), collapse = " ")
 paste(c("CA Total moyen Region 2 : ",round(mean(region2$Total), 2),"euros"), collapse = " ")
 paste(c("CA Total moyen Region 3 : ",round(mean(region3$Total), 2),"euros"), collapse = " ")
+
+
+
 
 #Partie 2 :
 	#Meilleur coéfficient de coréaltion linéaire
