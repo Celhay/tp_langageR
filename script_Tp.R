@@ -33,7 +33,7 @@ names(data) <- c("Canal","Region","ProduitsFrais","Lait","Epicerie","Surgele","D
 
 cor(data[-2][-1], use="complete.obs")
 
-#On peut voir que c'est la paire Détergent - Traiteur
+#On peut voir que c'est la paire Détergent - Epicerie
 
 #Question 2
 plot(data$Detergents, data$Epicerie, xlab = "Detergents", ylab = "Epicerie")
