@@ -1,6 +1,6 @@
 # Introduction : Chargement du fichier csv
-#data <- read.csv("D:/Epsi/EPSI I5/language R/tp/ventes.csv")
-data <- read.csv("C:/Users/rems_/OneDrive/Bureau/R/tp_langageR/ventes.csv")
+data <- read.csv("D:/Epsi/EPSI I5/language R/tp/ventes.csv")
+#data <- read.csv("C:/Users/rems_/OneDrive/Bureau/R/tp_langageR/ventes.csv")
 names(data) <- c("Canal","Region","ProduitsFrais","Lait","Epicerie","Surgele","Detergents","Traiteur")
 
 # Partie 1 :
