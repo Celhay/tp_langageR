@@ -24,11 +24,15 @@ write.csv2(data, file = "D:/Epsi/EPSI I5/language R/tp/TPR.csv")
 	#Chiffre d’affaire « Total » moyen
 apply(data[8],2,tapply,data$Region,mean)
 
+region1 <- data[data$Region == "1",]
+region2 <- data[data$Region == "2",]
+region3 <- data[data$Region == "3",]
+
+paste(c("CA Total moyen Region 1 : ",round(mean(region1$Total), 2),"euros"), collapse = " ")
+paste(c("CA Total moyen Region 2 : ",round(mean(region2$Total), 2),"euros"), collapse = " ")
+paste(c("CA Total moyen Region 3 : ",round(mean(region3$Total), 2),"euros"), collapse = " ")
+
 #Partie 2 :
-
-data <- read.csv("C:/Users/rems_/OneDrive/Bureau/R/tp_langageR/ventes.csv")
-names(data) <- c("Canal","Region","ProduitsFrais","Lait","Epicerie","Surgele","Detergents","Traiteur")
-
 	#Meilleur coéfficient de coréaltion linéaire
 cor(data[-2][-1], use="complete.obs")
 #On peut voir que c'est la paire Détergent - Epicerie
