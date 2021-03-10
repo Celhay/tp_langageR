@@ -22,3 +22,13 @@ data$"% Traiteur" <- round(data$Traiteur * 100 / data$TotalColonne)
 write.csv2(data, file = "D:/Epsi/EPSI I5/language R/tp/TPR.csv")
 
 str(data)
+
+
+
+#Partie 2
+
+#Question 1
+
+cor(data[-2][-1], use="complete.obs")
+
+#Question 2
